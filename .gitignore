@@ -1,0 +1,29 @@
+# dependencies
+**/node_modules/
+
+# build output
+**/dist/
+**/build/
+
+# env — NEVER commit real keys
+**/.env
+**/.env.local
+**/.env.*.local
+!**/.env.example
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.log
+.npm
+.cache/
+
+# TypeScript incremental build cache
+**/*.tsbuildinfo
+
+# Vite cache
+**/.vite/
+
+# Recovery backups
+**/*.bak
