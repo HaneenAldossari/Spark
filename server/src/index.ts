@@ -29,6 +29,9 @@ app.use(
 app.use(express.json({ limit: '64kb' }));
 app.use('/api', apiLimiter);
 
+app.get('/', (_req, res) => {
+  res.json({ ok: true, service: 'spark-api', hint: 'use /api/health' });
+});
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true, service: 'spark-api', stage: 1, ts: new Date().toISOString() });
 });
