@@ -41,7 +41,10 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
   res.status(500).json({ error: 'Internal server error', code: 'internal' });
 });
 
-app.listen(env.port, () => {
+// Bind to 0.0.0.0 so hosting platforms (Railway, Render, Fly, Docker) can
+// reach the process from outside the container. Without this, some hosts
+// treat the service as unresponsive because it only listens on localhost.
+app.listen(env.port, '0.0.0.0', () => {
   // eslint-disable-next-line no-console
-  console.log(`[spark] api listening on http://localhost:${env.port}`);
+  console.log(`[spark] api listening on 0.0.0.0:${env.port}`);
 });
