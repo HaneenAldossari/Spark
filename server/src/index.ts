@@ -44,10 +44,10 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
   res.status(500).json({ error: 'Internal server error', code: 'internal' });
 });
 
-// Bind to 0.0.0.0 so hosting platforms (Railway, Render, Fly, Docker) can
-// reach the process from outside the container. Without this, some hosts
-// treat the service as unresponsive because it only listens on localhost.
-app.listen(env.port, '0.0.0.0', () => {
+// Bind to :: (IPv6) which Node enables as dual-stack on Linux — accepts
+// both IPv6 and IPv4 connections. Railway's internal router uses IPv6, so
+// an IPv4-only bind (0.0.0.0) causes 502s even though the server is up.
+app.listen(env.port, '::', () => {
   // eslint-disable-next-line no-console
-  console.log(`[spark] api listening on 0.0.0.0:${env.port}`);
+  console.log(`[spark] api listening on [::]:${env.port}`);
 });
