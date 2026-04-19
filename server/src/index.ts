@@ -10,22 +10,10 @@ import sessionRoutes from './routes/session.js';
 
 const app = express();
 
-// Allow the configured client origin AND its 127.0.0.1 / localhost twin,
-// since browsers treat them as distinct origins for CORS purposes.
-const allowedOrigins = new Set<string>([
-  env.clientOrigin,
-  env.clientOrigin.replace('localhost', '127.0.0.1'),
-  env.clientOrigin.replace('127.0.0.1', 'localhost'),
-]);
-app.use(
-  cors({
-    origin: (origin, cb) => {
-      if (!origin || allowedOrigins.has(origin)) return cb(null, true);
-      return cb(new Error(`CORS: origin ${origin} not allowed`));
-    },
-    credentials: true,
-  }),
-);
+// Public app — no auth, no cookies, nothing origin-scoped to protect.
+// Accept any origin so the Vercel client (and any future frontend) works
+// without a CLIENT_ORIGIN allow-list.
+app.use(cors({ origin: true }));
 app.use(express.json({ limit: '64kb' }));
 app.use('/api', apiLimiter);
 
