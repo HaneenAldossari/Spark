@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import type { GameProps, GameResult, GameType } from './games.types';
 import { ACCENT } from './games.types';
 import NBackGame from './NBackGame';
@@ -214,22 +214,3 @@ function ProgressBar({ startedAtRef }: { startedAtRef: React.MutableRefObject<nu
   );
 }
 
-// Lightweight modal backdrop — clicking outside closes the modal.
-function ModalBackdrop({ children, onClose }: { children: React.ReactNode; onClose: () => void }) {
-  return (
-    <div
-      onClick={onClose}
-      style={{
-        position: 'fixed',
-        inset: 0,
-        background: 'rgba(14,14,16,0.45)',
-        zIndex: 1000,
-        display: 'grid',
-        placeItems: 'center',
-        padding: 20,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
