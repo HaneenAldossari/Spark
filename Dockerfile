@@ -9,6 +9,6 @@ RUN npm install
 # Copy server source
 COPY server/ ./
 
-EXPOSE 8787
+EXPOSE 8080
 
 CMD ["npm", "start"]
