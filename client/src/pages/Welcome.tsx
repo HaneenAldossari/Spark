@@ -67,7 +67,7 @@ export default function Welcome() {
           </div>
         </section>
 
-        <section className="mt-24 md:mt-32 grid grid-cols-12 gap-6 md:gap-10">
+        <section className="mt-20 md:mt-32 grid grid-cols-12 gap-6 md:gap-10">
           <div className="col-span-12 md:col-span-5">
             <div className="text-[11px] uppercase tracking-[0.2em] text-ash mb-4">{t.welcome.problemEyebrow}</div>
             <p className="font-display text-[clamp(26px,7vw,44px)] leading-[1.04] tracking-[-0.025em] text-balance">
@@ -76,27 +76,24 @@ export default function Welcome() {
               {t.welcome.problemLine2before}
               <span className="font-serif-i text-ash">{t.welcome.problemLine2after}</span>
             </p>
-          </div>
-          <div className="col-span-12 md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 text-[15px] leading-relaxed text-ink/80">
-            <Card title="DMN">
+            <p className="font-serif-i text-[16px] md:text-[18px] text-ink/70 mt-6 leading-[1.5] max-w-[38ch]">
               {ar
-                ? 'نشطة بقوّة في أثناء التمرير. تكبتها سبارك خلال ستّين ثانية — تلقائيًّا.'
-                : 'Highly active during scrolling. Spark suppresses it within sixty seconds — passively.'}
+                ? 'دماغك يحتاج من ٦ إلى ٢٠ دقيقة من التنشيط التدريجيّ قبل أن يدخل في التركيز العميق. الإرادة وحدها لا تختصر هذه الخطوة. سبارك يقوم بالتهيئة عنك في خمس دقائق.'
+                : 'Your brain needs 6–20 minutes of graduated activation before it can hold deep focus. Willpower can\'t skip the warm-up. Spark does it for you, in five minutes.'}
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-7 grid grid-cols-2 gap-3 md:gap-5 text-[13px] md:text-[15px] leading-snug text-ink/80">
+            <Card title="DMN">
+              {ar ? 'نشطة أثناء التمرير. تُكبَت في ستّين ثانية.' : 'Active while scrolling. Suppressed in 60 seconds.'}
             </Card>
             <Card title="PFC">
-              {ar
-                ? 'تحتاج إلى ستّ إلى عشرين دقيقة من التنشيط التدريجيّ قبل أن تتمكّن من الثبات على عملٍ حقيقيّ.'
-                : 'Needs six to twenty minutes of graduated activation before sustaining real work.'}
+              {ar ? 'تحتاج من ٦ إلى ٢٠ دقيقة للتسخين.' : 'Needs 6–20 min to warm up.'}
             </Card>
             <Card title={ar ? 'الدوبامين' : 'Dopamine'}>
-              {ar
-                ? 'مغمورٌ بمكافآت رخيصة. تعيد سبارك ضبط العتبة تحت تحدٍّ خفيف ومستحَقّ.'
-                : 'Flooded with cheap rewards. Spark resets the threshold under earned, mild challenge.'}
+              {ar ? 'خدّرته المكافآت السريعة. يُعاد ضبطه بالمكاسب المستحَقّة.' : 'Numbed by cheap rewards. Reset by earned wins.'}
             </Card>
             <Card title={ar ? 'النورإبينفرين' : 'Norepinephrine'}>
-              {ar
-                ? 'لا يُفرَز دون جِدّة أو رهان. ودون هرمون التركيز، لا تركيز.'
-                : 'Not released without novelty or stakes. No focus hormone, no focus.'}
+              {ar ? 'بدون جِدّة، لا يُفرَز هرمون التركيز.' : 'No novelty, no focus hormone.'}
             </Card>
           </div>
         </section>
