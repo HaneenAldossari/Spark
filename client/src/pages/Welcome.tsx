@@ -43,8 +43,8 @@ export default function Welcome() {
           <div className="grid grid-cols-3 divide-x divide-ink/15">
             <Stat
               label={ar ? 'الجلسة' : 'Session'}
-              value="07:00"
-              sub={ar ? 'سبع دقائق' : 'Seven minutes'}
+              value="05:00"
+              sub={ar ? 'خمس دقائق' : 'Five minutes'}
             />
             <Stat
               label={ar ? 'الألعاب' : 'Games'}
@@ -156,7 +156,7 @@ const phases = [
     labelAr: 'الخطوة ٠٢',
     nameEn: 'Warm-Up',
     nameAr: 'التسخين',
-    time: '0:10 → 7:00',
+    time: '0:10 → 5:00',
     descEn: 'Five of seven science-backed games, ordered for your task type.',
     descAr: 'خمسٌ من سبع ألعاب مبنيّة على أسس علميّة، مرتَّبة وفق نوع مهمّتك.',
     tagEn: 'ACTIVATE PFC',
@@ -168,7 +168,7 @@ const phases = [
     labelAr: 'الخطوة ٠٣',
     nameEn: 'Check-In',
     nameAr: 'المراجعة',
-    time: '7:00 → 7:10',
+    time: '5:00 → 5:10',
     descEn: "One question. If you're nervous, we add a short breathing pause before the score.",
     descAr: 'سؤالٌ واحد. إذا كنتَ متوتّرًا أُضيفت وقفة تنفّس قصيرة قبل النتيجة.',
     tagEn: 'READ YOUR STATE',
@@ -180,7 +180,7 @@ const phases = [
     labelAr: 'الخطوة ٠٤',
     nameEn: 'Focus Score',
     nameAr: 'درجة التركيز',
-    time: '7:10 → 7:30',
+    time: '5:10 → 5:30',
     descEn: 'Your brain score. Honest. Are you ready to start?',
     descAr: 'درجة دماغك. صادقة. هل أنت جاهز للبدء؟',
     tagEn: 'CLOSE THE LOOP',

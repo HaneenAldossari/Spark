@@ -24,7 +24,7 @@ export const en: {
   },
   footer: {
     rights: '© Spark 2026 — the pre-task ritual platform.',
-    tagline: '7 minutes · 5 phases · then we step back.',
+    tagline: '5 minutes · 5 phases · then we step back.',
   },
   // ---------- welcome ----------
   welcome: {
@@ -36,7 +36,7 @@ export const en: {
     heroLine3before: 'before',
     heroLine3after: ' the task.',
     heroSub:
-      'Spark is a seven-minute cognitive warm-up. Four steps. One purpose: prepare the brain to enter deep focus — faster than willpower ever could.',
+      'Spark is a five-minute cognitive warm-up. Four steps. One purpose: prepare the brain to enter deep focus — faster than willpower ever could.',
     cta: 'Begin a session',
     haveAccount: 'I have an account',
     statSession: 'Session',
@@ -56,7 +56,7 @@ export const en: {
     problemLine2after: 'neurologically stuck.',
     notEyebrow: 'Spark is not',
     notHead: 'A new category — not a better timer.',
-    promiseLine1: 'Seven minutes with Spark.',
+    promiseLine1: 'Five minutes with Spark.',
     promiseLine2: 'Then your brain is ready.',
     promiseCta: 'Ignite a session',
   },
@@ -78,7 +78,7 @@ export const en: {
     design: 'Design',
     math: 'Math',
     other: 'Other',
-    rule: '07:00 · 4 steps. Skipping a game is allowed but costs points.',
+    rule: '05:00 · 4 steps. Skipping a game is allowed but costs points.',
     ignite: 'Ignite session',
     starting: 'Generating your session…',
   },

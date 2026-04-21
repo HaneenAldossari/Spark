@@ -48,13 +48,13 @@ const TEXT = {
   en: {
     eyebrow: 'Your session',
     heading: "Here's what you'll play",
-    subtitle: (cat: string) => `5 games selected for ${cat} · about 7 minutes`,
+    subtitle: (cat: string) => `5 games selected for ${cat} · about 5 minutes`,
     cta: 'Start now',
   },
   ar: {
     eyebrow: 'جلستك',
     heading: 'هذه الألعاب التي ستلعبها',
-    subtitle: (cat: string) => `٥ ألعاب مختارة لـ${cat} · نحو ٧ دقائق`,
+    subtitle: (cat: string) => `٥ ألعاب مختارة لـ${cat} · نحو ٥ دقائق`,
     cta: 'لنبدأ الآن',
   },
 } as const;
