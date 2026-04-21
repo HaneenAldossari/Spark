@@ -47,7 +47,7 @@ export default function SessionFlow({
   language,
   taskName,
   taskCategory,
-  cognitiveRating = 1500,
+  cognitiveRating = 50,
   onSave,
   onComplete,
 }: SessionFlowProps) {

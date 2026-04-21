@@ -111,7 +111,7 @@ export default function Session() {
             language={lang}
             taskName={current.taskText}
             taskCategory={current.taskCategory}
-            cognitiveRating={1500}
+            cognitiveRating={50}
             onSave={handleSave}
             onComplete={quit}
           />

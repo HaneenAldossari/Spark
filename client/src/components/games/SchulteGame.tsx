@@ -333,8 +333,7 @@ export default function SchulteGame({ language, cognitiveRating, onComplete }: G
                 <div
                   key={number}
                   style={getCellStyle(number)}
-                  onClick={() => handleTap(number)}
-                  onTouchStart={(e) => { e.preventDefault(); handleTap(number); }}
+                  onPointerDown={(e) => { e.preventDefault(); handleTap(number); }}
                 >
                   {number}
                 </div>

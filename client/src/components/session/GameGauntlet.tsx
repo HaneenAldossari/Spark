@@ -65,7 +65,7 @@ type Phase = 'playing' | 'result' | 'transition';
 export default function GameGauntlet({
   language,
   taskCategory,
-  cognitiveRating = 1500,
+  cognitiveRating = 50,
   onComplete,
 }: GameGauntletProps) {
   const [phase, setPhase] = useState<Phase>('playing');
