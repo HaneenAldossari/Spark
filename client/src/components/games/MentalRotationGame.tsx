@@ -87,7 +87,7 @@ function roundScore(ms: number, correct: boolean): number {
 
 const TEXT = {
   en: { name: 'Mental Rotation', question: 'Same or mirrored?', same: 'Same', different: 'Mirror', help: 'Help', score: 'Score', round: 'Round', start: 'Start', instr: 'Are the two shapes the same, or is one a mirror image?', complete: 'Complete', accuracy: 'Accuracy', avgTime: 'Avg response', playAgain: 'Play again' },
-  ar: { name: 'الدوران الذهنيّ', question: 'الشكل نفسه أم معكوس؟', same: 'متطابق', different: 'معكوس', help: 'مساعدة', score: 'النتيجة', round: 'الجولة', start: 'ابدأ', instr: 'هل الشكلان متطابقان، أم أنّ أحدهما صورة مرآة للآخر؟', complete: 'اكتمل', accuracy: 'الدقّة', avgTime: 'معدّل الزمن', playAgain: 'اِلعب مجدّدًا' },
+  ar: { name: 'الدوران الذهنيّ', question: 'الشكل نفسه أم معكوس؟', same: 'متطابق', different: 'معكوس', help: 'مساعدة', score: 'النتيجة', round: 'الجولة', start: 'هيّا', instr: 'هل الشكلان متطابقان، أم أحدهما صورة مرآة للآخر؟', complete: 'اكتمل', accuracy: 'الدقّة', avgTime: 'متوسّط الزمن', playAgain: 'اِلعب مجدّدًا' },
 } as const;
 
 export default function MentalRotationGame({ language, cognitiveRating, onComplete }: GameProps) {
@@ -214,7 +214,7 @@ export default function MentalRotationGame({ language, cognitiveRating, onComple
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, gap: 6, flexDirection: 'row', flexWrap: 'wrap' }}>
         <span style={{ fontSize: 14, color: 'var(--color-ash)' }}>{t.round} {roundIdx + 1} / {TOTAL_ROUNDS}</span>
         <span style={{ fontSize: 14, fontWeight: 500, color: ACCENT.primary, fontFeatureSettings: '"tnum"' }}>{t.score}: {runningScore}</span>
-        <button type="button" onClick={triggerHelp} disabled={!!feedback || helpsUsed >= MAX_HELPS} style={{ border: '1px solid var(--color-cream-3)', background: 'var(--color-cream)', color: 'var(--color-ink)', borderRadius: 999, padding: '8px 14px', fontSize: 12, fontWeight: 500, cursor: helpsUsed >= MAX_HELPS ? 'not-allowed' : 'pointer', opacity: helpsUsed >= MAX_HELPS ? 0.4 : 1, minHeight: 44 }}>? {t.help} ({MAX_HELPS - helpsUsed})</button>
+        <button type="button" onClick={triggerHelp} disabled={!!feedback || helpsUsed >= MAX_HELPS} style={{ border: '1px solid var(--color-cream-3)', background: 'var(--color-cream)', color: 'var(--color-ink)', borderRadius: 999, padding: '8px 14px', fontSize: 12, fontWeight: 500, cursor: helpsUsed >= MAX_HELPS ? 'not-allowed' : 'pointer', opacity: helpsUsed >= MAX_HELPS ? 0.4 : 1, minHeight: 44 }}>{t.help} ({MAX_HELPS - helpsUsed})</button>
       </div>
 
       {/* Shapes side by side */}

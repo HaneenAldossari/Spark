@@ -23,10 +23,10 @@ const TEXT = {
     ready: 'Ready',
   },
   ar: {
-    heading: 'كيف تشعر تجاه مهمّتك؟',
+    heading: 'كيف تشعر تجاه ما ستفعله؟',
     nervous: 'متوتّر',
     okay: 'لا بأس',
-    ready: 'جاهز',
+    ready: 'مستعدّ',
   },
 } as const;
 

@@ -74,6 +74,12 @@ function makeRound(prev: Round | null): Round {
 
 type RoundState = 'asking' | 'feedback';
 
+// Convert a Western-numeral string/number to Arabic-Indic numerals.
+const AR_DIGITS = '٠١٢٣٤٥٦٧٨٩';
+function toAr(n: number | string): string {
+  return String(n).replace(/[0-9]/g, (d) => AR_DIGITS[Number(d)]!);
+}
+
 const TEXT = {
   en: {
     round: (i: number, n: number) => `Round ${i} of ${n}`,
@@ -87,15 +93,15 @@ const TEXT = {
     ms: (n: number) => `${n} ms`,
   },
   ar: {
-    round: (i: number, n: number) => `الجولة ${i} من ${n}`,
-    score: (s: number) => `النتيجة: ${s}`,
+    round: (i: number, n: number) => `الجولة ${toAr(i)} من ${toAr(n)}`,
+    score: (s: number) => `النتيجة ${toAr(s)}`,
     help: 'مساعدة',
     complete: 'اكتمل',
     accuracy: 'الدقّة',
     sharpest: 'أسرع جولة',
     playAgain: 'اِلعب مجدّدًا',
     colorName: (c: ColorDef) => c.name_ar,
-    ms: (n: number) => `${n} م.ث`,
+    ms: (n: number) => `${toAr(n)} م.ث`,
   },
 } as const;
 
@@ -349,7 +355,7 @@ export default function StroopGame({ language, onComplete }: GameProps) {
             minHeight: 44,
           }}
         >
-          ? {t.help}
+          {t.help}
         </button>
       </div>
 

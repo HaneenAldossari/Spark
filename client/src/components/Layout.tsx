@@ -28,7 +28,7 @@ export default function Layout() {
               className="text-[12px] uppercase tracking-[0.18em] text-ash hover:text-ink transition-colors min-h-[44px] px-2"
               aria-label="Toggle language"
             >
-              {language === 'ar' ? 'EN' : 'عربي'}
+              {language === 'ar' ? 'EN' : 'ع'}
             </button>
             {!isWelcome && (
               <Link to="/declare" className="btn-ink text-[12px] md:text-[13px] uppercase tracking-[0.14em] !py-3 !px-4 md:!px-5 min-h-[44px] inline-flex items-center">

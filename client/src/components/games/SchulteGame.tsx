@@ -45,7 +45,7 @@ const TEXT = {
     tryAgain: 'Try again',
   },
   ar: {
-    idle_instruction: 'ثبِّت عينيك في المنتصف. استخدم الرؤية المحيطيّة.',
+    idle_instruction: 'ثبّت نظرك في المنتصف. استخدم الرؤية المحيطيّة.',
     next: 'التالي',
     completed: 'اكتمل',
     score: 'النتيجة',
@@ -314,7 +314,7 @@ export default function SchulteGame({ language, cognitiveRating, onComplete }: G
                 minHeight: 44,
               }}
             >
-              ? {t.help}
+              {t.help}
             </button>
           </div>
 

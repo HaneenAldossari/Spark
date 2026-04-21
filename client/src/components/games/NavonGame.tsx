@@ -61,7 +61,7 @@ function roundScore(responseMs: number, correct: boolean): number {
 
 const TEXT = {
   en: { name: 'Navon Letters', instr: 'Tap the SMALL letter that makes up the big shape.', question: 'What is the small letter?', help: 'Help', score: 'Score', round: 'Round', start: 'Start', complete: 'Complete', accuracy: 'Accuracy', avgTime: 'Avg response', playAgain: 'Play again' },
-  ar: { name: 'حروف نافون', instr: 'اضغط الحرف الصغير الذي يتألّف منه الشكل الكبير.', question: 'ما الحرف الصغير؟', help: 'مساعدة', score: 'النتيجة', round: 'الجولة', start: 'ابدأ', complete: 'اكتمل', accuracy: 'الدقّة', avgTime: 'معدّل الزمن', playAgain: 'اِلعب مجدّدًا' },
+  ar: { name: 'حروف نافون', instr: 'اضغط الحرف الصغير، لا الكبير.', question: 'ما الحرف الصغير؟', help: 'مساعدة', score: 'النتيجة', round: 'الجولة', start: 'هيّا', complete: 'اكتمل', accuracy: 'الدقّة', avgTime: 'متوسّط الزمن', playAgain: 'اِلعب مجدّدًا' },
 } as const;
 
 export default function NavonGame({ language, onComplete }: GameProps) {
@@ -160,7 +160,7 @@ export default function NavonGame({ language, onComplete }: GameProps) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, gap: 6, flexDirection: 'row', flexWrap: 'wrap' }}>
         <span style={{ fontSize: 14, color: 'var(--color-ash)' }}>{t.round} {roundIdx + 1} / {TOTAL_ROUNDS}</span>
         <span style={{ fontSize: 14, fontWeight: 500, color: ACCENT.primary, fontFeatureSettings: '"tnum"' }}>{t.score}: {runningScore}</span>
-        <button type="button" onClick={triggerHelp} disabled={!!feedback || helpsUsed >= MAX_HELPS} style={{ border: '1px solid var(--color-cream-3)', background: 'var(--color-cream)', color: 'var(--color-ink)', borderRadius: 999, padding: '8px 14px', fontSize: 12, fontWeight: 500, cursor: helpsUsed >= MAX_HELPS ? 'not-allowed' : 'pointer', opacity: helpsUsed >= MAX_HELPS ? 0.4 : 1, minHeight: 44 }}>? {t.help} ({MAX_HELPS - helpsUsed})</button>
+        <button type="button" onClick={triggerHelp} disabled={!!feedback || helpsUsed >= MAX_HELPS} style={{ border: '1px solid var(--color-cream-3)', background: 'var(--color-cream)', color: 'var(--color-ink)', borderRadius: 999, padding: '8px 14px', fontSize: 12, fontWeight: 500, cursor: helpsUsed >= MAX_HELPS ? 'not-allowed' : 'pointer', opacity: helpsUsed >= MAX_HELPS ? 0.4 : 1, minHeight: 44 }}>{t.help} ({MAX_HELPS - helpsUsed})</button>
       </div>
 
       {/* Navon letter display */}

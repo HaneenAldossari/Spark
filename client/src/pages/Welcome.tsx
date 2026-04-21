@@ -43,18 +43,18 @@ export default function Welcome() {
           <div className="grid grid-cols-3 divide-x divide-ink/15">
             <Stat
               label={ar ? 'الجلسة' : 'Session'}
-              value="05:00"
+              value={ar ? '٠٥:٠٠' : '05:00'}
               sub={ar ? 'خمس دقائق' : 'Five minutes'}
             />
             <Stat
               label={ar ? 'الألعاب' : 'Games'}
-              value="5"
+              value={ar ? '٥' : '5'}
               sub={ar ? 'مختارة لمهمّتك' : 'Selected for your task'}
             />
             <Stat
               label={ar ? 'درجة التركيز' : 'Focus Score'}
-              value="0–100"
-              sub={ar ? 'درجة جاهزيّة صادقة' : 'Honest readiness score'}
+              value={ar ? '٠–١٠٠' : '0–100'}
+              sub={ar ? 'مقياس جاهزيّة حقيقيّ' : 'Honest readiness score'}
             />
           </div>
         </section>
@@ -78,22 +78,22 @@ export default function Welcome() {
             </p>
             <p className="font-serif-i text-[16px] md:text-[18px] text-ink/70 mt-6 leading-[1.5] max-w-[38ch]">
               {ar
-                ? 'دماغك يحتاج من ٦ إلى ٢٠ دقيقة من التنشيط التدريجيّ قبل أن يدخل في التركيز العميق. الإرادة وحدها لا تختصر هذه الخطوة. سبارك يقوم بالتهيئة عنك في خمس دقائق.'
+                ? 'يحتاج دماغك بين ٦ و٢٠ دقيقة ليصل إلى التركيز العميق. لا تختصرها الإرادة وحدها — سبارك يمهّد الطريق في خمس دقائق.'
                 : 'Your brain needs 6–20 minutes of graduated activation before it can hold deep focus. Willpower can\'t skip the warm-up. Spark does it for you, in five minutes.'}
             </p>
           </div>
           <div className="col-span-12 md:col-span-7 grid grid-cols-2 gap-3 md:gap-5 text-[13px] md:text-[15px] leading-snug text-ink/80">
             <Card title="DMN">
-              {ar ? 'نشطة أثناء التمرير. تُكبَت في ستّين ثانية.' : 'Active while scrolling. Suppressed in 60 seconds.'}
+              {ar ? 'نشط أثناء التمرير. يهدأ في ستّين ثانية من التركيز الموجَّه.' : 'Active while scrolling. Suppressed in 60 seconds.'}
             </Card>
             <Card title="PFC">
-              {ar ? 'تحتاج من ٦ إلى ٢٠ دقيقة للتسخين.' : 'Needs 6–20 min to warm up.'}
+              {ar ? 'يحتاج من ٦ إلى ٢٠ دقيقة ليدخل في كامل طاقته.' : 'Needs 6–20 min to warm up.'}
             </Card>
             <Card title={ar ? 'الدوبامين' : 'Dopamine'}>
-              {ar ? 'خدّرته المكافآت السريعة. يُعاد ضبطه بالمكاسب المستحَقّة.' : 'Numbed by cheap rewards. Reset by earned wins.'}
+              {ar ? 'استنزفته المكافآت السريعة. تُعيد ضبطه المكاسب المستحَقَّة.' : 'Numbed by cheap rewards. Reset by earned wins.'}
             </Card>
             <Card title={ar ? 'النورإبينفرين' : 'Norepinephrine'}>
-              {ar ? 'بدون جِدّة، لا يُفرَز هرمون التركيز.' : 'No novelty, no focus hormone.'}
+              {ar ? 'بدون جِدّة حقيقيّة، لا يُفرَز هرمون التركيز.' : 'No novelty, no focus hormone.'}
             </Card>
           </div>
         </section>
@@ -140,10 +140,11 @@ const phases = [
     labelEn: 'STEP 01',
     labelAr: 'الخطوة ٠١',
     nameEn: 'Declare',
-    nameAr: 'الإعلان',
-    time: '0:00 → 0:10',
+    nameAr: 'حدِّد المهمّة',
+    timeEn: '0:00 → 0:10',
+    timeAr: '٠:٠٠ ← ٠:١٠',
     descEn: "Tell Spark what you're about to do. Pick a category.",
-    descAr: 'أخبر سبارك بما ستفعله. اختر الفئة.',
+    descAr: 'أخبِر سبارك بما ستفعله. اختر نوع النشاط.',
     tagEn: 'PRIME THE BRAIN',
     tagAr: 'تهيئة الدماغ',
     color: 'var(--color-teal)',
@@ -152,10 +153,11 @@ const phases = [
     labelEn: 'STEP 02',
     labelAr: 'الخطوة ٠٢',
     nameEn: 'Warm-Up',
-    nameAr: 'التسخين',
-    time: '0:10 → 5:00',
+    nameAr: 'الإحماء',
+    timeEn: '0:10 → 5:00',
+    timeAr: '٠:١٠ ← ٥:٠٠',
     descEn: 'Five of seven science-backed games, ordered for your task type.',
-    descAr: 'خمسٌ من سبع ألعاب مبنيّة على أسس علميّة، مرتَّبة وفق نوع مهمّتك.',
+    descAr: 'خمس ألعاب قصيرة مبنيّة على علم الأعصاب، مرتّبة حسب مهمّتك.',
     tagEn: 'ACTIVATE PFC',
     tagAr: 'تنشيط القشرة الجبهيّة',
     color: 'var(--color-purple)',
@@ -165,9 +167,10 @@ const phases = [
     labelAr: 'الخطوة ٠٣',
     nameEn: 'Check-In',
     nameAr: 'المراجعة',
-    time: '5:00 → 5:10',
+    timeEn: '5:00 → 5:10',
+    timeAr: '٥:٠٠ ← ٥:١٠',
     descEn: "One question. If you're nervous, we add a short breathing pause before the score.",
-    descAr: 'سؤالٌ واحد. إذا كنتَ متوتّرًا أُضيفت وقفة تنفّس قصيرة قبل النتيجة.',
+    descAr: 'سؤال واحد. وإن كنت متوتّرًا، نفَسٌ قصيرٌ يعيد ضبطك.',
     tagEn: 'READ YOUR STATE',
     tagAr: 'اقرأ حالتك',
     color: 'var(--color-amber)',
@@ -176,12 +179,13 @@ const phases = [
     labelEn: 'STEP 04',
     labelAr: 'الخطوة ٠٤',
     nameEn: 'Focus Score',
-    nameAr: 'درجة التركيز',
-    time: '5:10 → 5:30',
+    nameAr: 'الختام',
+    timeEn: '5:10 → 5:30',
+    timeAr: '٥:١٠ ← ٥:٣٠',
     descEn: 'Your brain score. Honest. Are you ready to start?',
-    descAr: 'درجة دماغك. صادقة. هل أنت جاهز للبدء؟',
+    descAr: 'ابدأ العمل وأنت مُهيّأ — لا تردّد، ولا إحماء إضافيّ.',
     tagEn: 'CLOSE THE LOOP',
-    tagAr: 'أغلق الحلقة',
+    tagAr: 'الختام',
     color: 'var(--color-green)',
   },
 ];
@@ -191,7 +195,8 @@ function PhaseCard({
   labelAr,
   nameEn,
   nameAr,
-  time,
+  timeEn,
+  timeAr,
   descEn,
   descAr,
   tagEn,
@@ -203,6 +208,7 @@ function PhaseCard({
   const ar = language === 'ar';
   const label = ar ? labelAr : labelEn;
   const name = ar ? nameAr : nameEn;
+  const time = ar ? timeAr : timeEn;
   const desc = ar ? descAr : descEn;
   const tag = ar ? tagAr : tagEn;
   return (
@@ -234,11 +240,11 @@ const compare = {
     { them: 'Study apps', theyDo: 'Organize content and tasks.', weDo: 'Prepare the brain to absorb them.' },
   ],
   ar: [
-    { them: 'مؤقّتات التركيز', theyDo: 'تحتسب الوقت بعد بدء التركيز.', weDo: 'نصنع حالة التركيز قبل أن يبدأ المؤقّت.' },
-    { them: 'تدريب الدماغ', theyDo: 'تبني المهارات على مدى أسابيع.', weDo: 'ننشّط الجاهزيّة الذهنيّة الآن.' },
-    { them: 'تطبيقات التأمّل', theyDo: 'تهدّئ الدماغ.', weDo: 'نهيّئ الدماغ — حالةٌ مختلفة.' },
-    { them: 'تطبيقات الحجب', theyDo: 'تُزيل التشتيت بالقوّة.', weDo: 'نجعل التركيز طبيعيًّا ومستحَقًّا.' },
-    { them: 'تطبيقات الدراسة', theyDo: 'تنظّم المحتوى والمهامّ.', weDo: 'نهيّئ الدماغ لاستيعابها.' },
+    { them: 'مؤقّتات التركيز', theyDo: 'تعدّ الوقت بعد أن تبدأ.', weDo: 'سبارك يصنع حالة التركيز قبل أن يبدأ المؤقّت.' },
+    { them: 'تدريب الدماغ', theyDo: 'يبني المهارات على مدى أسابيع.', weDo: 'سبارك يُنشّط جاهزيّتك الذهنيّة الآن.' },
+    { them: 'تطبيقات التأمّل', theyDo: 'تُهدّئ الدماغ.', weDo: 'سبارك يُهيّئه — حالةٌ مختلفة.' },
+    { them: 'تطبيقات الحجب', theyDo: 'تُزيل التشتيت بالقوّة.', weDo: 'سبارك يجعل التركيز طبيعيًّا ومستحَقًّا.' },
+    { them: 'تطبيقات الدراسة', theyDo: 'تُنظّم المحتوى والمهام.', weDo: 'سبارك يُهيّئ الدماغ لاستيعابها.' },
   ],
 };
 

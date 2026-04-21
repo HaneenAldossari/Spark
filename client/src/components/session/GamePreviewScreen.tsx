@@ -53,9 +53,9 @@ const TEXT = {
   },
   ar: {
     eyebrow: 'جلستك',
-    heading: 'هذه الألعاب التي ستلعبها',
+    heading: 'ألعاب هذه الجلسة',
     subtitle: (cat: string) => `٥ ألعاب مختارة لـ${cat} · نحو ٥ دقائق`,
-    cta: 'لنبدأ الآن',
+    cta: 'هيّا نبدأ',
   },
 } as const;
 

@@ -44,13 +44,13 @@ const STR = {
     watch: 'Just watch...',
   },
   ar: {
-    match: 'تطابق',
+    match: 'مطابق',
     different: 'مختلف',
     round: 'الجولة',
     score: 'النتيجة',
     help: 'مساعدة',
-    instr: 'هل هذا الموضع نفسه قبل جولتين؟',
-    watch: 'راقب فحسب…',
+    instr: 'هل يتطابق مع الجولة قبل السابقة؟',
+    watch: 'راقب فقط…',
   },
 } as const;
 
@@ -236,7 +236,7 @@ export default function NBackGame({ language, onComplete }: GameProps) {
             minHeight: 44,
           }}
         >
-          ? {t.help}
+          {t.help}
         </button>
       </div>
       <p className="text-center text-[15px] md:text-[16px] text-ink/70 mb-5 px-2">{t.instr}</p>

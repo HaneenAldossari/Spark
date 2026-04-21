@@ -133,14 +133,21 @@ const TEXT = {
     finalScore: 'Score',
   },
   ar: {
-    round: (i: number, n: number) => `الجولة ${i} من ${n}`,
-    score: (s: number) => `النتيجة: ${s}`,
+    round: (i: number, n: number) => `الجولة ${toAr(i)} من ${toAr(n)}`,
+    score: (s: number) => `النتيجة ${toAr(s)}`,
     help: 'مساعدة',
     complete: 'اكتمل',
     correct: 'الإجابات الصحيحة',
     finalScore: 'النتيجة',
   },
 } as const;
+
+// Convert Western digits to Arabic-Indic. Math problems and the score
+// number itself skip this so the operators (+, −, ×, ÷, =) stay coherent.
+const AR_DIGITS = '٠١٢٣٤٥٦٧٨٩';
+function toAr(n: number | string): string {
+  return String(n).replace(/[0-9]/g, (d) => AR_DIGITS[Number(d)]!);
+}
 
 type RoundState = 'asking' | 'feedback-ok' | 'feedback-bad';
 
@@ -337,7 +344,7 @@ export default function SpeedMathGame({ language, cognitiveRating, onComplete }:
             minHeight: 44,
           }}
         >
-          ? {t.help}
+          {t.help}
         </button>
       </div>
 

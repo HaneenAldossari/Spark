@@ -50,11 +50,11 @@ const MOTIVATIONS = {
     { emoji: '🚀', text: 'Last one. Give it everything!' },
   ],
   ar: [
-    { emoji: '🔥', text: 'دماغك بدأ يشتغل!' },
-    { emoji: '⚡', text: 'كمّل على نفس الإيقاع!' },
-    { emoji: '💡', text: 'أنت في الجو الصح!' },
-    { emoji: '🎯', text: 'مركّز. كمّل كذا.' },
-    { emoji: '🚀', text: 'الأخيرة. عطها كل شي!' },
+    { emoji: '🔥', text: 'دماغك يشتعل.' },
+    { emoji: '⚡', text: 'حافظ على الإيقاع.' },
+    { emoji: '💡', text: 'أنت في قلب التركيز.' },
+    { emoji: '🎯', text: 'مثبَّت. واصل.' },
+    { emoji: '🚀', text: 'الأخيرة. أعطِها كلّ ما لديك.' },
   ],
 };
 

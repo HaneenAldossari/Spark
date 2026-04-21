@@ -32,7 +32,7 @@ const STAGE_1_MS = 2000;
 
 const TEXT = {
   en: { upNext: 'Up Next', start: 'Start' },
-  ar: { upNext: 'اللعبة التالية', start: 'لنبدأ' },
+  ar: { upNext: 'اللعبة التالية', start: 'هيّا' },
 } as const;
 
 export default function GameTransition({

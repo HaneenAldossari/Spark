@@ -33,7 +33,10 @@ export default function PrimeScreen({
   }, [step, onDone]);
 
   const goLabel = language === 'ar' ? 'انطلِق' : 'GO';
-  const display = step > 0 ? String(step) : goLabel;
+  const arDigit = (n: number) => '٠١٢٣٤٥٦٧٨٩'[n] ?? String(n);
+  const display = step > 0
+    ? (language === 'ar' ? arDigit(step) : String(step))
+    : goLabel;
 
   return (
     <div
