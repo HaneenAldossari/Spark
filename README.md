@@ -4,6 +4,8 @@
 
 [Live demo](https://spark-coral-kappa.vercel.app) · [Report an issue](https://github.com/HaneenAldossari/Spark/issues)
 
+![Spark landing page](docs/screenshots/landing-desktop-en.png)
+
 ---
 
 ## The premise
@@ -32,6 +34,28 @@ Each task category gets a curated 5-game set — coding sessions emphasize worki
 - **Skip with consequence.** Skipping any game scores 0 for that game — no fake partial credit.
 - **AI-generated session content.** Each session uses Gemini 1.5 Flash to generate a personalized story, a battle question, and a launch message keyed to the player's declared task.
 - **No accounts. No data saved.** The app is fully public and stateless — every visitor is a guest, every session is ephemeral, no cookies, no tracking.
+
+## Screens
+
+**Declare a task →** Spark uses the category to tailor the 5-game set.
+
+![Declare a task](docs/screenshots/declare-desktop-en.png)
+
+**Preview the session →** see the 5 games chosen for your task type, with a one-line explainer each, before anything starts.
+
+![Session preview](docs/screenshots/preview-desktop-en.png)
+
+**Mid-game (Color Clash) →** the word reads RED but the ink is green. Tap the *ink* color, not the word. One of seven games in the rotation.
+
+![Color Clash game](docs/screenshots/game-stroop-en.png)
+
+**Bilingual + RTL.** Toggle between English and formal Arabic with full right-to-left layout, Hindi-Arabic numerals, and native voice (not translated).
+
+![Arabic landing page](docs/screenshots/landing-desktop-ar.png)
+
+**Mobile-first.** Every screen designed for 390px width upward. Touch targets ≥ 44px, fluid typography, no horizontal scroll.
+
+<p align="center"><img src="docs/screenshots/landing-mobile-en.png" alt="Mobile landing page" width="320" /></p>
 
 ## Tech stack
 
